@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nvoltair <nvoltair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/24 11:45:54 by nvoltair          #+#    #+#             */
-/*   Updated: 2024/06/1 23:07:23 by nvoltair         ###   ########.fr       */
+/*   Created: 2024/05/24 10:13:11 by nvoltair          #+#    #+#             */
+/*   Updated: 2024/06/15 15:21:31 by nvoltair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,18 @@ int	handle_input(int keysym, t_fdf *fdf)
 	if (keysym == XK_Escape)
 		return (kill_win(fdf));
 	return (0);
+}
+
+void	skip_some(t_line line, double i, int j)
+{
+	double	slope;
+
+	slope = (line.towards.y - line.from.y) / (line.towards.x - line.from.x);
+	while (i < 0 || j < 0 || i > WINDOW_HEIGHT || j > WINDOW_WIDTH)
+	{
+		if ((int)i == (int)line.towards.y || j == (int)line.towards.x)
+			break ;
+		i += slope;
+		j++;
+	}
 }

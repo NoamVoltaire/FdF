@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nvoltair <nvoltair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/24 11:45:54 by nvoltair          #+#    #+#             */
-/*   Updated: 2024/06/1 23:07:23 by nvoltair         ###   ########.fr       */
+/*   Created: 2024/05/20 08:32:09 by nvoltair          #+#    #+#             */
+/*   Updated: 2024/06/06 08:13:05 by nvoltair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	positiv_slope(t_line line, t_segment segment, double i, int j)
 				color_this_pxl(j, segment));
 		else
 			break ;
-		printf("i'm here\n");
 		cps++;
 	}
 	while ((i + slope >= (i + cps)) && i + cps <= line.towards.y)
@@ -71,20 +70,6 @@ void	positiv_slope(t_line line, t_segment segment, double i, int j)
 	}
 }
 
-void	skip_some(t_line line, double i, int j)
-{
-	double	slope;
-
-	slope = (line.towards.y - line.from.y) / (line.towards.x - line.from.x);
-	while (i < 0 || j < 0 || i > WINDOW_HEIGHT || j > WINDOW_WIDTH)
-	{
-		if ((int)i == (int)line.towards.y || j == (int)line.towards.x)
-			break ;
-		i += slope;
-		j++;
-	}
-}
-
 void	skip_some_mor(t_line line, double i, int j)
 {
 	double	slope;
@@ -93,10 +78,7 @@ void	skip_some_mor(t_line line, double i, int j)
 	while (i < 0 || i > WINDOW_HEIGHT)
 	{
 		if ((int)i == (int)line.towards.y && j == (int)line.towards.x)
-		{
-			printf("i'm here\n");
 			break ;
-		}
 		i += slope;
 		j++;
 	}

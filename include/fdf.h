@@ -6,7 +6,7 @@
 /*   By: nvoltair <nvoltair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 08:52:23 by nvoltair          #+#    #+#             */
-/*   Updated: 2024/06/17 04:56:07 by nvoltair         ###   ########.fr       */
+/*   Updated: 2024/06/28 12:10:19 by nvoltair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,22 +74,22 @@ typedef struct s_point
 {
 	double	x;
 	double	y;
-	int 	color;
+	int		color;
 }	t_point;
 
 typedef struct s_line
 {
-	t_point from;
+	t_point	from;
 	t_point	towards;
-	t_img *img;
+	t_img	*img;
 }	t_line;
 
 typedef struct s_egment
 {
-	int start;
+	int	start;
 	int	end;
-	int st_col;
-	int end_col;
+	int	st_col;
+	int	end_col;
 }	t_segment;
 
 typedef struct s_angles
@@ -140,7 +140,7 @@ double	fpart(double val);
 double	abs_valu(double x);
 void	swap(double *a, double *b);
 t_point	space_2_iso_plan(t_fdf fdf, t_mapdata *mapdata, int i, int j);
-double	rotate_3d_coord(t_point *ret, t_angles rotas, int x, int y , int z);
+// double	rotate_3d_coord(t_point *ret, t_angles rotas, int x, int y, int z);
 int		corner_draw(t_fdf *fdf, int i, int j);
 int		edge_draw(t_fdf *fdf, int i, int j);
 int		corner_draw_two(t_fdf *fdf, int i, int j);
@@ -152,10 +152,11 @@ void	negativ_slope(t_line line, t_segment segment, double i, int j);
 void	draw_it(t_line line, double i, int j, double slope);
 int		naive_line(t_img *img, t_point from, t_point towards);
 	/*GUI*/
-int	pop_the_window(t_fdf *fdf);
+int		pop_the_window(t_fdf *fdf);
 int		kill_win(t_fdf *fdf);
 void	gui_info(t_fdf fdf);
 int		handle_input(int keysym, t_fdf *fdf);
 void	handle_input2(int keysym, t_fdf *fdf);
+void	draw_it(t_line line, double i, int j, double slope);
 
 #endif

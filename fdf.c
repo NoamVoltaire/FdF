@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nvoltair <nvoltair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/24 11:45:54 by nvoltair          #+#    #+#             */
-/*   Updated: 2024/06/1 23:07:23 by nvoltair         ###   ########.fr       */
+/*   Created: 2024/05/19 09:57:20 by nvoltair          #+#    #+#             */
+/*   Updated: 2024/06/28 14:11:22 by nvoltair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	render_background(t_img *img, int color)
 
 	segment.start = 0;
 	segment.end = WINDOW_HEIGHT + WINDOW_WIDTH;
-	segment.st_col = 0x0b4746;
+	segment.st_col = 0x24302e;
 	segment.end_col = color;
 	i = 0;
 	while (i < WINDOW_HEIGHT)
@@ -85,7 +85,7 @@ int	render(t_fdf *fdf)
 {
 	if (fdf->mlx.win_ptr == NULL)
 		return (1);
-	render_background(&fdf->mlx.img, 0x470b21);
+	render_background(&fdf->mlx.img, 0x10002b);
 	drawing_routine(fdf);
 	mlx_put_image_to_window(fdf->mlx.mlx_ptr, fdf->mlx.win_ptr, \
 		fdf->mlx.img.mlx_img, 0, 0);

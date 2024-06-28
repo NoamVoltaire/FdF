@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nvoltair <nvoltair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 08:52:23 by nvoltair          #+#    #+#             */
-/*   Updated: 2024/06/17 04:56:07 by nvoltair         ###   ########.fr       */
+/*   Created: 2024/05/18 07:51:05 by nvoltair          #+#    #+#             */
+/*   Updated: 2024/06/12 03:10:18 by nvoltair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,6 @@ int	horizontal(t_img *img, t_point from, t_point towards)
 	segment.end = (int)towards.x;
 	segment.st_col = from.color;
 	segment.end_col = towards.color;
-	// if (from.x > towards.x)
-	// 	return (horizontal(img, towards, from));
 	j = (int)from.x;
 	while (j < (int)towards.x)
 	{
