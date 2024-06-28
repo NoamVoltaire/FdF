@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nvoltair <nvoltair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 08:52:23 by nvoltair          #+#    #+#             */
-/*   Updated: 2024/06/27 14:55:44 by nvoltair         ###   ########.fr       */
+/*   Created: 2024/05/18 02:13:18 by nvoltair          #+#    #+#             */
+/*   Updated: 2024/06/11 12:51:45 by nvoltair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,11 @@ char	*get_line(char *str)
 		rtn[i] = str[i];
 		i++;
 	}
+	// if (str[i] == '\n')
+	// {
+	// 	rtn[i] = str[i];
+	// 	i++;
+	// }
 	rtn[i] = 0;
 	return (rtn);
 }
